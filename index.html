@@ -12,14 +12,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
             #left_side {
-              float: left;
+              display: none;
               
               background-color: black;
+              height: 40px;
             
             }
             #right_side {
-              float: right;
-              min-width: 100%;
+              
+              
               
             }
             .hero-image{
@@ -44,7 +45,7 @@
               height: auto;
               
             }
-            .navbar{
+            #push{
               position: absolute;
               top: 0px;
             }
@@ -71,11 +72,13 @@
     </head>
     <body>
         <div id="root">
+          <div id="left_side">Lefty
+          </div>
           <div id="right_side">
               <div class="hero-image">
-                  <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+                  <nav id="push" class="navbar navbar-expand-lg navbar-light sticky-top">
                     <a class="navbar-brand" href="#"><img src="images/zara logo.png" width="48" height="48" alt=""></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collaapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onclick="myFunction()">
                     <span class="navbar-toggler-icon"></span>
                     </button>
 
@@ -135,8 +138,7 @@
                   <p>pls gib me content</p>
                 </div>
             </div>
-          <div id="left_side">Lefty
-          </div>
+          
               
         </div>
           <!-- link to JQuery -->
@@ -148,11 +150,14 @@
           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
             <script>
               function myFunction(){
-                var x = document.getElementById("right_side");
-                if (x.style.minWidth === "80%") {
-                  x.style.minWidth = "100%";
+                var x = document.getElementById("left_side");
+                var y = document.getElementById("push");
+                if (x.style.display === "block") {
+                  x.style.display = "none";
+                  y.style.top = "0px";
                 } else {
-                  x.style.minWidth = "80%";
+                  x.style.display = "block";
+                  y.style.top = "40px";
                 }
               }
             </script>
